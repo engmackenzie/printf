@@ -24,10 +24,10 @@ _printf mimics the stdout.h printf function.
 	- va_end (man 3 va_end)
 	- va_copy (man 3 va_copy)
 	- va_arg (man 3 va_arg)
-## Compilation##
-	- Your code will be compiled this way:
+## Compilation ##
+- Your code will be compiled this way:
 ``$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c``
-	- As a consequence, be careful not to push any c file containing a main function in the root directory of your project.
+- As a consequence, be careful not to push any c file containing a main function in the root directory of your project.
 
 # Tasks
 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
