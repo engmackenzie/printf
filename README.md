@@ -1,22 +1,22 @@
 # 0x11. C - printf
 
-`This is a group project authored by two brilliant Software Engineers`
-Author: Stephen Makenzi Waweru
-	stevomakenzi@gmail.com
+This is a group project authored by two brilliant Software Engineers
+Author: Stephen Makenzi Waweru - stevomakenzi@gmail.com
+
 Author: Amos Njagi Ndungo
 
-_printf mimics the stdout.h printf function.
+``_printf`` mimics the ``stdout.h`` ``printf`` function.
 
 ## Resources ##
-**Read or watch:**
+### Read or watch: ###
 	- Secrets of printf
 	- Group Projects concept page (Don’t forget to read this)
 	- Flowcharts concept page
-**man or help:**
+### man or help: ###
 	- printf (3)
 
 # More Info
-##Authorized functions and macros
+## Authorized functions and macros ## 
 	- write (man 2 write)
 	- malloc (man 3 malloc)
 	- free (man 3 free)
@@ -26,7 +26,7 @@ _printf mimics the stdout.h printf function.
 	- va_arg (man 3 va_arg)
 ## Compilation ##
 - Your code will be compiled this way:
-``$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c``
+	- ``$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c``
 - As a consequence, be careful not to push any c file containing a main function in the root directory of your project.
 
 # Tasks
