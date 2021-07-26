@@ -9,13 +9,15 @@
  * @id: identifier.
  * @f: corresponding function.
  */
-typedef struct id_func{
-        char *id;
-        void (*f)(char *, va_list);
+typedef struct id_func
+{
+	char *id;
+	void (*f)(char *, va_list);
 } id_f;
 
 void _putchar(char c);
 int _printf(const char *format, ...);
-int p_char(va_list c);
-int p_str(va_list s);
+void p_char(va_list ap);
+void p_str(va_list ap);
+void p_perc(va_list ap);
 #endif
