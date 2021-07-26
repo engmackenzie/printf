@@ -19,4 +19,5 @@ void _putchar(char c);
 int _printf(const char *format, ...);
 int p_char(va_list ap);
 int p_str(va_list ap);
+int p_int(va_list ap);
 #endif
