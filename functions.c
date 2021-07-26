@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdarg.h>
 
 /**
  * p_char - prints out a character
@@ -50,7 +51,8 @@ void p_perc(va_list ap)
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		++str;
-		_putchar(str[i]);
+		if (str[i + 1] == '%')
+			_putchar(str[i + 1]);
+		_printf(str[i + 1]);
 	}
 }
