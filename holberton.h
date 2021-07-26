@@ -16,4 +16,6 @@ typedef struct id_func{
 
 void _putchar(char c);
 int _printf(const char *format, ...);
+int p_char(va_list c);
+int p_str(va_list s);
 #endif
