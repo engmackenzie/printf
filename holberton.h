@@ -20,5 +20,4 @@ int _printf(const char *format, ...);
 void p_char(va_list ap);
 void p_str(va_list ap);
 void p_perc(va_list ap);
-
 #endif
