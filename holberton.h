@@ -17,7 +17,6 @@ typedef struct id_func
 
 void _putchar(char c);
 int _printf(const char *format, ...);
-void p_char(va_list ap);
-void p_str(va_list ap);
-void p_perc(va_list ap);
+int p_char(va_list ap);
+int p_str(va_list ap);
 #endif
