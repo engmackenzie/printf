@@ -4,7 +4,7 @@ This is a group project authored by two brilliant Software Engineers
 
 Author: Stephen Makenzi Waweru - stevomakenzi@gmail.com
 
-Author: Amos Njagi Ndungo
+Author: Amos Njagi Ndungo - amosndungo@gmail.com
 
 ``_printf`` mimics the ``stdout.h`` ``printf`` function.
 
