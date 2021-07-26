@@ -57,15 +57,18 @@ int p_perc(va_list ap)
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		/*check if next character is %*/
-		/*print %*/
-		if (str[i + 1] == '%')
-		{
-			_putchar(str[i + 1]);
-		}
-		/*else check if the next character is a conversion specifier*/
-		else
-			_printf(str[i + 1]);
+		/*
+		 *check if next character is %
+		*print %
+		*if (str[i + 1] == '%')
+		*{
+		*	_putchar(str[i + 1]);
+		*}
+		*else check if the next character is a conversion specifier
+		*else
+		*printf(str[i + 1]);
+		*/
+		_putchar(str[i + 1]);
 		len++;
 	}
 	return (len);
