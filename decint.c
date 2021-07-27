@@ -84,3 +84,20 @@ int p_int(va_list ap)
 
 	return (len);
 }
+
+/**
+ * _pow - calculates the value of b ^ e.
+ * @b: base.
+ * @e: power.
+ *
+ * Return: b^e.
+ */
+static unsigned long _pow(unsigned int b, unsigned int e)
+{
+	unsigned int i;
+	unsigned long pw = b;
+
+	for (i = 1; i < exponent; i++)
+		pw *= base;
+	return (pw);
+}

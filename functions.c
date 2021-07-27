@@ -3,7 +3,7 @@
 #include <stddef.h>
 
 /**
- * p_char - prints out a character
+ * p_char - prints out a character (handles %c)
  * @ap: argument parameter to the character expected
  * Return: number of charcters printed
  */
@@ -18,7 +18,7 @@ int p_char(va_list ap)
 }
 
 /**
- * p_str - prints out a string
+ * p_str - prints out a string (handles %s)
  * @ap: argument parameter to the expected string
  * Return: number of charcters printed
  */
@@ -63,7 +63,7 @@ int ascii_hex(char i)
 }
 
 /**
- * p_S - prints a string and non-printable chars;
+ * p_S - prints a string and non-printable chars (handles %S)
  * @ap: string to be printed.
  *
  * Return: no. of chars printed.
@@ -95,3 +95,52 @@ int p_S(va_list ap)
 	return (len);
 }
 
+/**
+ * p_p - prints a memory address (handles %p)
+ * @ap: address to be printed.
+ *
+ * Return: no. of chars printed.
+ */
+int p_p(va_list ap)
+{
+	int len = 0;
+	unsigned int arr[16], i = 0, total = 0;
+	unsigned long n, m;
+	char *s = "(nil)";
+
+	n = va_arg(ap, unsigned long);
+	if (n == 0)
+	{
+		while (s[i])
+		{
+			_putchar(s[i]);
+			len++;
+			i++;
+		}
+		return (len);
+	}
+	_putchar('0');
+	_putchar('x');
+	len++;
+	m = _pow(16, 15);
+	arr[0] = n / m;
+	i = 1;
+	while (i < 16)
+	{
+		m /= 16;
+		a[i] = (n / m) % 16;
+	}
+	i = 0;
+	while (i < 16)
+	{
+		total += arr[i];
+		if (total || i == 15)
+		{
+			arr[i] < 10 ? _putchar(arr[i] + '0') :
+				_putchar(arr[i] + '0' + 'a' - ':');
+			len++;
+		}
+		i++;
+	}
+	return (len);
+}

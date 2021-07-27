@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * int p_binary - prints an int int binary (handles b)
+ * p_binary - prints an int int binary (handles b)
  * @ap: the int to be printed
  *
  * Return: number of chars printed.
@@ -13,9 +13,9 @@ int p_binary(va_list ap)
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
-	
+
 	if (!n)
-		i++;	
+		i++;
 	while (n > 0)
 	{
 		arr[i] = n % 2;
@@ -48,7 +48,7 @@ int p_udec(va_list ap)
 
 	n = va_arg(ap, unsigned int);
 
-	if(!n)
+	if (!n)
 	{
 		i++;
 		arr[0] = 0;
@@ -70,7 +70,7 @@ int p_udec(va_list ap)
 
 	return (len);
 }
-		
+
 /**
  * p_oct - prints an unsigned int in octal (handles o)
  * @ap: uint to be printed.
@@ -84,12 +84,12 @@ int p_oct(va_list ap)
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
-	
+
 	if (!n)
 	{
 		i++;
 		arr[0] = 0;
-	}	
+	}
 	while (n > 0)
 	{
 		arr[i] = n % 8;
@@ -109,7 +109,7 @@ int p_oct(va_list ap)
 }
 
 /**
- * int p_xhex - prints a uint in lowercase hex
+ * p_xhex - prints a uint in lowercase hex
  * @ap: the int to be printed
  *
  * Return: number of chars printed.
@@ -121,12 +121,12 @@ int p_xhex(va_list ap)
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
-	
+
 	if (!n)
 	{
 		i++;
 		arr[0] = 0;
-	}	
+	}
 	while (n > 0)
 	{
 		arr[i] = n % 16;
