@@ -103,6 +103,7 @@ int p_S(va_list ap)
  */
 int p_p(va_list ap)
 {
+	unsigned long _pow(unsigned int b, unsigned int e);
 	int len = 0;
 	unsigned int arr[16], i = 0, total = 0;
 	unsigned long n, m;
@@ -124,8 +125,7 @@ int p_p(va_list ap)
 	len = 2;
 	m = _pow(16, 15);
 	arr[0] = n / m;
-	i = 1;
-	while (i < 16)
+	for (i = 1; i < 16; i++)
 	{
 		m /= 16;
 		arr[i] = (n / m) % 16;

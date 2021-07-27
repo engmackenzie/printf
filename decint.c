@@ -92,12 +92,12 @@ int p_int(va_list ap)
  *
  * Return: b^e.
  */
-static unsigned long _pow(unsigned int b, unsigned int e)
+unsigned long _pow(unsigned int b, unsigned int e)
 {
 	unsigned int i;
 	unsigned long pw = b;
 
-	for (i = 1; i < exponent; i++)
-		pw *= base;
+	for (i = 1; i < e; i++)
+		pw *= b;
 	return (pw);
 }
