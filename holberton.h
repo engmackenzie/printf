@@ -23,4 +23,5 @@ int p_str(va_list ap);
 int p_int(va_list ap);
 int p_dec(va_list ap);
 int p_binary(va_list ap);
+int p_udec(va_list ap);
 #endif

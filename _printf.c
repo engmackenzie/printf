@@ -18,6 +18,7 @@ static int (*func_selector(const char *format))(va_list)
 		{"d", p_dec},
 		{"i", p_int},
 		{"b", p_binary},
+		{"u", p_udec},
 		{NULL, NULL}
 	};
 
