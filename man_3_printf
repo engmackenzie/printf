@@ -1,14 +1,13 @@
-".SH
-NAME
+./"This is a manpage for _printf()
+.TH _printf 3 "27 July 2021" "V1.0" "_printf manpage"
+.SH NAME
 	_printf - produces formatted output onto the stdout stream
 
-.SH
-SYNOPSIS
+.SH SYNOPSIS
 	#include "holberton.h"
 
 	int _printf(const char *format, ...);
-.SH
-DESCRIPTION
+.SH DESCRIPTION
 	The function _printf produces output according to a format.
 	The output is written to stdout, the standard output stream.
 	The function calls other functions for it to print out what
@@ -21,45 +20,45 @@ DESCRIPTION
 		The character determining the conversion type to be
 		applied
 
-		d, i
+.IP		d, i
 		if the modifier is present, the function calls the
 		p_int() function that prints out each digit of the
 		integer or float it receives as input
 
-		c
+.IP		c
 		if the modifier is present the function calls a
 		p_char() function that writes the character
 		on stdout via the va_args(ap, int)
 
-		s
+.IP		s
 		if the modifier is present, the function calls a
 		p_str() function that checks if the buffer is null
 		for which it assigns (null) to it, else it prints out
 		the string using va_args(ap, char *) char by char.
 
-		S
+.IP		S
 		Non printable characters (0 < ASCII value < 32 or >= 127)
 		are printed this way: \x, followed by the ASCII code value
 		in hexadecimal (upper case - always 2 characters)
 
-		u
+.IP		u
 		if the modifier is present, the function calls a
 		p_udec() function that prints an unsigned int in
 		decimal
 
-		o
+.IP		o
 		if the modifier is present, the fucntion prints an
 		unsigned int in octal using the p_oct() function
 
-		x
+.IP		x
 		if the modifer is present, the function prints a
 		uint in lowercase hex
 
-		X
+.IP		X
 		if the modifer is present, the function prints a
 		uint in uppercase hex notation
 
-		p
+.IP		p
 		if the modifier is present, the function prints a
 		memory address, as is expected of a pointer. Returns
 		the number of chars contained in this memeory address.
@@ -74,7 +73,7 @@ printed out with exception of the terminating null ('\0') byte.
 .SH
 CONFORMING TO
 	_printf(): C89, C99.
-
+.SH
 EXAMPLE
 	To print out using modifiers in comparison to  the standard
 	library function printf()
@@ -94,7 +93,6 @@ EXAMPLE
 	 int len2;
 	 unsigned int ui;
 	 void *addr;
-
 	 len = _printf("Let's try to printf a simple sentence.\n");
 	 len2 = printf("Let's try to printf a simple sentence.\n");
 	 ui = (unsigned int)INT_MAX + 1024;
@@ -131,5 +129,3 @@ BUGS
 AUTHOR(s)
 	Stephen Makenzi Waweru - stevomakenzi@gmail.com
 	Amos Njagi Ndungo - amosndungo@gmail.com
-
-_printf(3)   27 July 2021	v2.0	_printf man page"
