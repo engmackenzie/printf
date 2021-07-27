@@ -87,9 +87,10 @@ int p_S(va_list ap)
 		}
 		else
 		{
-			_putchar(S[i]);
+			_putchar(S[n]);
 			len++;
 		}
+		n++;
 	}
 	return (len);
 }
