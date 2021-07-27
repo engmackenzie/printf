@@ -15,6 +15,8 @@ static int (*func_selector(const char *format))(va_list)
 	id_f identf[] = {
 		{"c", p_char},
 		{"s", p_str},
+		{"d", p_dec},
+		{"i", p_int},
 		{NULL, NULL}
 	};
 
