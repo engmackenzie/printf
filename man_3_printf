@@ -61,7 +61,11 @@ DESCRIPTION
 		uint in uppercase hex notation
 
 		p
+		if the modifier is present, the function prints a
+		memory address, as is expected of a pointer. Returns
+		the number of chars contained in this memeory address.
 
+		
 
 .SH
 RETURN VALUE
