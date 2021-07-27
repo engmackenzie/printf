@@ -13,10 +13,10 @@ static int (*func_selector(const char *format))(va_list)
 {
 	unsigned int i = 0;
 	id_f identf[] = {
-                {"c", p_char},
-                {"s", p_str},
-                {NULL, NULL}
-        };
+		{"c", p_char},
+		{"s", p_str},
+		{NULL, NULL}
+	};
 
 	while (identf[i].id != NULL)
 	{
@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int i = 0, j = 0;		/* i -loop and j -counter */
 	va_list ap;				/* req in variadic functions */
-	int (*func)(va_list); 			/* pointer to function */
+	int (*func)(va_list);			/* pointer to function */
 
 	/* check for nullity */
 	if (format == NULL)
@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 		if (func != NULL)
 		{
 			j += func(ap);		/* count what is printed */
-			i += 2; 		/* escape '%' and identifier */
+			i += 2;			/* escape '%' and identifier */
 			continue;
 		}
 		if (!format[i + 1])
