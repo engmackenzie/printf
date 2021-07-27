@@ -8,7 +8,7 @@
 
 int p_dec(va_list ap)
 {
-	int arr[10], i = 1, max, holder, total, len = 0;
+	int arr[10], i = 1, max, holder, total = 0, len = 0;
 
 	holder = va_arg(ap, int);
 	max = 1000000000;
@@ -51,7 +51,7 @@ int p_dec(va_list ap)
 
 int p_int(va_list ap)
 {
-	int arr[10], i = 1, max, holder, total, len = 0;
+	int arr[10], i = 1, max, holder, total = 0, len = 0;
 
 	holder = va_arg(ap, int);
 	max = 1000000000;
