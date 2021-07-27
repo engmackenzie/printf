@@ -9,7 +9,7 @@
 
 int p_binary(va_list ap)
 {
-	unsigned int n, arr[33], len = 0;
+	unsigned int n, arr[32], len = 0;
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
