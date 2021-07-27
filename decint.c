@@ -14,7 +14,7 @@ int p_int(va_list ap)
 	int digits[MAX];
 
 	x = va_arg(ap, int);
-	if (x == NULL)
+	if (!x)
 	{
 		_putchar('\n');
 		return (1);
