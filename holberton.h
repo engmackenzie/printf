@@ -28,4 +28,5 @@ int p_Xhex(va_list ap);
 int p_xhex(va_list ap);
 int p_oct(va_list ap);
 int p_udec(va_list ap);
+int p_S(va_list ap);
 #endif

@@ -22,6 +22,7 @@ static int (*func_selector(const char *format))(va_list)
 		{"o", p_oct},
 		{"x", p_xhex},
 		{"X", p_Xhex},
+		{"S", p_S},
 		{NULL, NULL}
 	};
 
