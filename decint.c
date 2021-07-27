@@ -30,7 +30,7 @@ int p_dec(va_list ap)
 	i = 0;
 	while (i < 10)
 	{
-		total += a[i];
+		total += arr[i];
 		if (total != 0 || i == 9)
 		{
 			_putchar(arr[i] + '0');
@@ -73,7 +73,7 @@ int p_int(va_list ap)
 	i = 0;
 	while (i < 10)
 	{
-		total += a[i];
+		total += arr[i];
 		if (total != 0 || i == 9)
 		{
 			_putchar(arr[i] + '0');
