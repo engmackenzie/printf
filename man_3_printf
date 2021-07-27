@@ -22,8 +22,8 @@
 
 .IP		d
 		if the modifier is present, the function calls the
-                p_dec() function that prints out each digit of the
-                integer it receives as input
+		p_dec() function that prints out each digit of the
+		integer it receives as input
 
 .IP		i
 		if the modifier is present, the function calls the
@@ -32,8 +32,8 @@
 
 .IP		c
 		if the modifier is present the function calls a
-		p_char() function that writes the character
-		on stdout via the va_args(ap, int)
+		p_char() function that writes the character on
+		stdout via the va_args(ap, int)
 
 .IP		s
 		if the modifier is present, the function calls a
