@@ -1,4 +1,3 @@
-"_printf" 3	"27 July 2021"	"_printf manpage"
 ".SH
 NAME
 	_printf - produces formatted output onto the stdout stream
@@ -131,6 +130,6 @@ BUGS
 .SH
 AUTHOR(s)
 	Stephen Makenzi Waweru - stevomakenzi@gmail.com
-	Amos Njagi Ndungo - amosndungo@gmail.com"
+	Amos Njagi Ndungo - amosndungo@gmail.com
 
-_printf(3)      "27 July 2021" "v2.0" _printf man page
+_printf(3)   27 July 2021	v2.0	_printf man page"
