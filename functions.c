@@ -121,14 +121,14 @@ int p_p(va_list ap)
 	}
 	_putchar('0');
 	_putchar('x');
-	len++;
+	len = 2;
 	m = _pow(16, 15);
 	arr[0] = n / m;
 	i = 1;
 	while (i < 16)
 	{
 		m /= 16;
-		a[i] = (n / m) % 16;
+		arr[i] = (n / m) % 16;
 	}
 	i = 0;
 	while (i < 16)
