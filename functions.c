@@ -37,3 +37,60 @@ int p_str(va_list ap)
 	}
 	return (len);
 }
+
+/**
+ * ascii_hex - prints ascii value in uppercase hex notation
+ * @i: char to be printed.
+ * 
+ * Return: no. of chars printed.
+ */
+int ascii_hex(char i)
+{
+	int len = 0;
+	char arr[2];
+
+	arr[0] = i / 16;
+	arr[1] = i % 16;
+
+	while (len < 2)
+	{
+		arr[len] >= 10 ? _putchar(arr[len] + '0' + 'A' - ':') :
+			_putchar(arr[len] + '0');
+		len++;
+
+	}
+	return (len)
+}
+
+/**
+ * p_S - prints a string and non-printable chars;
+ * @ap: string to be printed.
+ *
+ * Return: no. of chars printed.
+ */
+int p_S(va_list ap)
+{
+	unsigned int n = 0;
+	int len = 0;
+	char *S = va_arg(ap, char *);
+
+	if (!S)
+		S = "(null)";
+	while (S[n])
+	{
+		if (S[n] < 32 || S[n] > 126)
+		{
+			_putchar('\\');
+			_putchar('x');
+			len += 2;
+			len += ascii_hex(S[n]);
+		}
+		else
+		{
+			_putchar(S[i]);
+			len++;
+		}
+	}
+	return (len);
+}
+
