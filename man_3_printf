@@ -35,6 +35,24 @@ DESCRIPTION
 		p_str() function that checks if the buffer is null
 		for which it assigns (null) to it, else it prints out
 		the string using va_args(ap, char *) char by char
+
+		u
+		if the modifier is present, the function calls a
+		p_udec() function that prints an unsigned int in
+		decimal
+
+		o
+		if the modifier is present, the fucntion prints an
+		unsigned int in octal using the p_oct() function
+
+		x
+		if the modifer is present, the function prints a
+		uint in lowercase hex
+
+		X
+		if the modifer is present, the function prints a
+		uint in uppercase hex notation
+
 .SH
 RETURN VALUE
 Upon successful return, this function returns the number of characters
