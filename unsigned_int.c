@@ -83,7 +83,10 @@ int p_oct(va_list ap)
 	n = va_arg(ap, unsigned int);
 	
 	if (!n)
-		i++;	
+	{
+		i++;
+		arr[0] = 0;
+	}	
 	while (n > 0)
 	{
 		arr[i] = n % 8;
@@ -111,13 +114,16 @@ int p_oct(va_list ap)
 
 int p_xhex(va_list ap)
 {
-	unsigned int n, arr[33], len = 0;
+	unsigned int n, arr[8], len = 0;
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
 	
 	if (!n)
-		i++;	
+	{
+		i++;
+		arr[0] = 0;
+	}	
 	while (n > 0)
 	{
 		arr[i] = n % 16;
@@ -146,13 +152,16 @@ int p_xhex(va_list ap)
  */
 int p_Xhex(va_list ap)
 {
-	unsigned int n, arr[33], len = 0;
+	unsigned int n, arr[8], len = 0;
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
 
 	if (!n)
+	{
 		i++;
+		arr[0] = 0;
+	}
 	while (n > 0)
 	{
 		arr[i] = n % 16;
