@@ -41,7 +41,7 @@ int p_str(va_list ap)
 /**
  * ascii_hex - prints ascii value in uppercase hex notation
  * @i: char to be printed.
- * 
+ *
  * Return: no. of chars printed.
  */
 int ascii_hex(char i)
@@ -59,7 +59,7 @@ int ascii_hex(char i)
 		len++;
 
 	}
-	return (len)
+	return (len);
 }
 
 /**
