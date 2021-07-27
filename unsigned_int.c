@@ -9,17 +9,22 @@
 
 int p_binary(va_list ap)
 {
-	unsigned int n, arr[32], len = 0;
+	unsigned int n, arr[33], len = 0;
 	int i = 0;
 
 	n = va_arg(ap, unsigned int);
-
-	while (n > 0)
+	
+	if (!n)
 	{
-		arr[i] = n % 2;
-		n /= 2;
+		len++;
 		i++;
-	}
+	} else 
+		while (n > 0)
+		{
+			arr[i] = n % 2;
+			n /= 2;
+			i++;
+		}
 	i--;
 
 	while (i >= 0)
