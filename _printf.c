@@ -24,6 +24,7 @@ static int (*func_selector(const char *format))(va_list)
 		{"X", p_Xhex},
 		{"S", p_S},
 		{"p", p_p},
+		{"R", p_R},
 		{NULL, NULL}
 	};
 

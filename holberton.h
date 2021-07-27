@@ -31,4 +31,5 @@ int p_udec(va_list ap);
 int p_S(va_list ap);
 int p_p(va_list ap);
 unsigned long _pow(unsigned int b, unsigned int e); 
+int p_R(va_list ap);
 #endif
