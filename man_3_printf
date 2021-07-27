@@ -12,9 +12,11 @@ SYNOPSIS
 DESCRIPTION
 	The function _printf produces output according to a format.
 	The output is written to stdout, the standard output stream.
-	The function is different from printf() in that it does not
-	do buffer handling, flag characters, field width, precision,
-	and length modifiers.
+	The function calls other functions for it to print out what
+	is required.
+
+	The function entails a local buffer of 1024 characters in order
+	to call write as little as possible.
 
 	Conversion Specifiers
 		The character determining the conversion type to be
