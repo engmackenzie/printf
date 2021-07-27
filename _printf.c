@@ -11,20 +11,20 @@
  */
 int (*func_selector(const char *format))(va_list)
 {
-	unsigned int i;
+	unsigned int i = 0;
 	id_f identf[] = {
                 {"c", p_char},
                 {"s", p_str},
                 {NULL, NULL}
         };
 
-	while (indef[i].id)
+	while (identf[i].id)
 	{
-		if (*(indef[i].id) == *format)
+		if (*(identf[i].id) == *format)
 			break;
 		i++;
 	}
-	return (indef[i].f);
+	return (identf[i].f);
 }
 
 
@@ -72,6 +72,6 @@ int _printf(const char *format, ...)
 			i++;
 	}
 	va_end(ap);
-	return (j);
 
+	return (j);
 }

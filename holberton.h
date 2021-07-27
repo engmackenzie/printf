@@ -2,6 +2,7 @@
 #define HOLBERTON_H
 
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * struct id_func - Struct id_func
