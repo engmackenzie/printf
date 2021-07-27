@@ -3,12 +3,12 @@
 #define MAX 100
 
 /**
- * p_int - handles the d specifier
+ * p_dec - handles the d specifier
  * @ap: arg pointer to decimal
  * Return: no of char printed
  */
 
-int p_int(va_list ap)
+int p_dec(va_list ap)
 {
 	int x, len = 0, j, i = 0, temp;
 	int digits[MAX];
@@ -43,4 +43,16 @@ int p_int(va_list ap)
 		}
 	}
 	return (len);
+}
+
+/**
+ * p_int - prints an int (handles the i specifier).
+ * @ap: integer to be printed 
+ *
+ * Return: number of chars printed
+ */
+
+int p_int(va_list ap)
+{
+	int arr[10];
 }
