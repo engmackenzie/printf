@@ -36,7 +36,10 @@ DESCRIPTION
 		if the modifier is present, the function calls a
 		p_str() function that checks if the buffer is null
 		for which it assigns (null) to it, else it prints out
-		the string using va_args(ap, char *) char by char
+		the string using va_args(ap, char *) char by char.
+		Non printable characters (0 < ASCII value < 32 or >= 127)
+		are printed this way: \x, followed by the ASCII code value
+		in hexadecimal (upper case - always 2 characters)
 
 		u
 		if the modifier is present, the function calls a
