@@ -138,4 +138,38 @@ int p_xhex(va_list ap)
 
 	return (len);
 }
+/**
+ * p_Xhex - prints a uint in uppercase hex notation.
+ * @ap: the uint to be printed.
+ *
+ * Return: no. of chars printed.
+ */
+int p_Xhex(va_list ap)
+{
+	unsigned int n, arr[33], len = 0;
+	int i = 0;
 
+	n = va_arg(ap, unsigned int);
+
+	if (!n)
+		i++;
+	while (n > 0)
+	{
+		arr[i] = n % 16;
+		n /= 16;
+		i++;
+	}
+	i--;
+
+	while (i >= 0)
+	{
+		if (arr[i] < 10)
+			_putchar(arr[i] + '0');
+		else
+			_putchar(arr[i] + '0' + 'A' - ':');
+		i--;
+		len++;
+	}
+
+	return (len);
+}

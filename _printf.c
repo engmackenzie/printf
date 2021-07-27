@@ -19,6 +19,9 @@ static int (*func_selector(const char *format))(va_list)
 		{"i", p_int},
 		{"b", p_binary},
 		{"u", p_udec},
+		{"o", p_oct},
+		{"x", p_xhex},
+		{"X", p_Xhex},
 		{NULL, NULL}
 	};
 
