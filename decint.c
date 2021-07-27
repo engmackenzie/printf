@@ -44,7 +44,7 @@ int p_dec(va_list ap)
 
 /**
  * p_int - prints an int (handles the i specifier).
- * @ap: integer to be printed 
+ * @ap: integer to be printed
  *
  * Return: number of chars printed
  */
