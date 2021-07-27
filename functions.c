@@ -10,10 +10,11 @@
 int p_char(va_list ap)
 {
 	int len = 0;
+
 	_putchar(va_arg(ap, int));
 	len += 1;
 
-	return(len);
+	return (len);
 }
 
 /**
