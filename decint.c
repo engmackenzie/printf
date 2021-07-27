@@ -10,39 +10,7 @@
 
 int p_dec(va_list ap)
 {
-	int x, len = 0, j, i = 0, temp;
-	int digits[MAX];
 
-	x = va_arg(ap, int);
-	if (!x)
-	{
-		_putchar('\n');
-		return (1);
-	}
-	if (x <= 9)
-	{
-		_putchar(x % 10);
-		len++;
-	}
-	else
-	{
-		/*add individual digits to an array*/
-		while (x != 0)
-		{
-			temp = x % 10;
-			digits[i] = temp;
-			i++;
-			x = x / 10;
-		}
-		/*print digits from above array*/
-		len = 0;
-		for (j = i - 1; j > -1; j--)
-		{
-			_putchar(digits[j]);
-			len += 1;
-		}
-	}
-	return (len);
 }
 
 /**
@@ -54,5 +22,36 @@ int p_dec(va_list ap)
 
 int p_int(va_list ap)
 {
-	int arr[10];
+	int arr[10], i = 1, max, holder, total, len = 0;
+
+	holder = va_arg(ap, int);
+	max = 1000000000;
+	arr[0] = holder / max;
+
+	while (i < 10)
+	{
+		max /= 10;
+		arr[i] = (holder / max) % 10;
+		i++;
+	}
+	if (holder < 0)
+	{
+		_putchar('-');
+		len++;
+		for (i = 0; i < 10; i++)
+			arr[i] *= -1;
+	}
+	i = 0;
+	while (i < 10)
+	{
+		total += a[i];
+		if (total != 0 || i == 9)
+		{
+			_putchar(arr[i] + '0');
+			len++;
+		}
+		i++;
+	}
+
+	return (len);
 }
