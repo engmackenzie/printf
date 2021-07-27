@@ -29,10 +29,7 @@ int p_str(va_list ap)
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
-	{
-		_putchar('\n');
-		return (1);
-	}
+		str = "(null)";
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		_putchar(str[i]);
