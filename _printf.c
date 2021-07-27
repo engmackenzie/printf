@@ -9,7 +9,7 @@
  *
  * Return: pointer to corresponding function.
  */
-int (*func_selector(const char *format))(va_list)
+static int (*func_selector(const char *format))(va_list)
 {
 	unsigned int i = 0;
 	id_f identf[] = {
@@ -18,10 +18,12 @@ int (*func_selector(const char *format))(va_list)
                 {NULL, NULL}
         };
 
-	while (identf[i].id)
+	while (identf[i].id != NULL)
 	{
 		if (*(identf[i].id) == *format)
+		{
 			break;
+		}
 		i++;
 	}
 	return (identf[i].f);
@@ -51,12 +53,13 @@ int _printf(const char *format, ...)
 		while (format[i] != '%' && format[i])
 		{
 			_putchar(format[i]);
+			i++;
 			j++;
 		}
 		if (!format[i])
 			return (j);
 		func = func_selector(&format[i + 1]);
-		if (func)
+		if (func != NULL)
 		{
 			j += func(ap);		/* count what is printed */
 			i += 2; 		/* escape '%' and identifier */

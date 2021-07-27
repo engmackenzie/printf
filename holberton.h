@@ -13,12 +13,12 @@
 typedef struct id_func
 {
 	char *id;
-	void (*f)(char *, va_list);
+	int (*f)(va_list);
 } id_f;
 
-void _putchar(char c);
+int _putchar(char c);
 int _printf(const char *format, ...);
-int p_char(va_list ap);
-int p_str(va_list ap);
+int p_char(va_list c);
+int p_str(va_list s);
 int p_int(va_list ap);
 #endif
