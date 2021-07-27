@@ -49,7 +49,10 @@ int p_udec(va_list ap)
 	n = va_arg(ap, unsigned int);
 
 	if(!n)
+	{
 		i++;
+		arr[0] = 0;
+	}
 	while (n > 0)
 	{
 		arr[i] = n % 10;
