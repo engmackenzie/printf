@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
-#define MAX 100
 
 /**
  * p_dec - handles the d specifier
@@ -10,7 +8,38 @@
 
 int p_dec(va_list ap)
 {
+	int arr[10], i = 1, max, holder, total, len = 0;
 
+	holder = va_arg(ap, int);
+	max = 1000000000;
+	arr[0] = holder / max;
+
+	while (i < 10)
+	{
+		max /= 10;
+		arr[i] = (holder / max) % 10;
+		i++;
+	}
+	if (holder < 0)
+	{
+		_putchar('-');
+		len++;
+		for (i = 0; i < 10; i++)
+			arr[i] *= -1;
+	}
+	i = 0;
+	while (i < 10)
+	{
+		total += a[i];
+		if (total != 0 || i == 9)
+		{
+			_putchar(arr[i] + '0');
+			len++;
+		}
+		i++;
+	}
+
+	return (len);
 }
 
 /**
