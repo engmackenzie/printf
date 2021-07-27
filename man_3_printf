@@ -65,7 +65,7 @@ DESCRIPTION
 		memory address, as is expected of a pointer. Returns
 		the number of chars contained in this memeory address.
 
-		
+
 
 .SH
 RETURN VALUE
@@ -132,3 +132,4 @@ BUGS
 AUTHOR(s)
 	Stephen Makenzi Waweru - stevomakenzi@gmail.com
 	Amos Njagi Ndungo - amosndungo@gmail.com
+"
