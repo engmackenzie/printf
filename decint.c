@@ -1,46 +1,86 @@
 #include "holberton.h"
-#include <stdarg.h>
-#define MAX 100
 
 /**
- * p_int - handles the d specifier
+ * p_dec - handles the d specifier
  * @ap: arg pointer to decimal
  * Return: no of char printed
  */
 
+int p_dec(va_list ap)
+{
+	int arr[10], i = 1, max, holder, total = 0, len = 0;
+
+	holder = va_arg(ap, int);
+	max = 1000000000;
+	arr[0] = holder / max;
+
+	while (i < 10)
+	{
+		max /= 10;
+		arr[i] = (holder / max) % 10;
+		i++;
+	}
+	if (holder < 0)
+	{
+		_putchar('-');
+		len++;
+		for (i = 0; i < 10; i++)
+			arr[i] *= -1;
+	}
+	i = 0;
+	while (i < 10)
+	{
+		total += arr[i];
+		if (total != 0 || i == 9)
+		{
+			_putchar(arr[i] + '0');
+			len++;
+		}
+		i++;
+	}
+
+	return (len);
+}
+
+/**
+ * p_int - prints an int (handles the i specifier).
+ * @ap: integer to be printed
+ *
+ * Return: number of chars printed
+ */
+
 int p_int(va_list ap)
 {
-	int x, len = 0, j, i = 0, temp;
-	int digits[MAX];
+	int arr[10], i = 1, max, holder, total = 0, len = 0;
 
-	x = va_arg(ap, int);
-	if (!x)
+	holder = va_arg(ap, int);
+	max = 1000000000;
+	arr[0] = holder / max;
+
+	while (i < 10)
 	{
-		_putchar('\n');
-		return (1);
+		max /= 10;
+		arr[i] = (holder / max) % 10;
+		i++;
 	}
-	if (x <= 9)
+	if (holder < 0)
 	{
-		_putchar(x % 10);
+		_putchar('-');
 		len++;
+		for (i = 0; i < 10; i++)
+			arr[i] *= -1;
 	}
-	else
+	i = 0;
+	while (i < 10)
 	{
-		/*add individual digits to an array*/
-		while (x != 0)
+		total += arr[i];
+		if (total != 0 || i == 9)
 		{
-			temp = x % 10;
-			digits[i] = temp;
-			i++;
-			x = x / 10;
+			_putchar(arr[i] + '0');
+			len++;
 		}
-		/*print digits from above array*/
-		len = 0;
-		for (j = i - 1; j > -1; j--)
-		{
-			_putchar(digits[j]);
-			len += 1;
-		}
+		i++;
 	}
+
 	return (len);
 }
