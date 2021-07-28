@@ -1,40 +1,76 @@
-.TH _printf 3 "27 July 2021" "v1.0" _printf man page"
-.SH
-NAME
+./"This is a manpage for _printf()
+.TH _printf 3 "27 July 2021" "V1.0" "_printf manpage"
+.SH NAME
 	_printf - produces formatted output onto the stdout stream
 
-.SH
-SYNOPSIS
+.SH SYNOPSIS
 	#include "holberton.h"
 
 	int _printf(const char *format, ...);
-.SH
-DESCRIPTION
+.SH DESCRIPTION
 	The function _printf produces output according to a format.
 	The output is written to stdout, the standard output stream.
-	The function is different from printf() in that it does not
-	do buffer handling, flag characters, field width, precision,
-	and length modifiers.
+	The function calls other functions for it to print out what
+	is required.
+
+	The function entails a local buffer of 1024 characters in order
+	to call write as little as possible.
 
 	Conversion Specifiers
 		The character determining the conversion type to be
 		applied
 
-		d, i
+.IP		d
+		if the modifier is present, the function calls the
+		p_dec() function that prints out each digit of the
+		integer it receives as input
+
+.IP		i
 		if the modifier is present, the function calls the
 		p_int() function that prints out each digit of the
 		integer or float it receives as input
 
-		c
+.IP		c
 		if the modifier is present the function calls a
-		p_char() function that writes the character
-		on stdout via the va_args(ap, int)
+		p_char() function that writes the character on
+		stdout via the va_args(ap, int)
 
-		s
+.IP		s
 		if the modifier is present, the function calls a
 		p_str() function that checks if the buffer is null
 		for which it assigns (null) to it, else it prints out
-		the string using va_args(ap, char *) char by char
+		the string using va_args(ap, char *) char by char.
+
+.IP		S
+		Non printable characters (0 < ASCII value < 32 or >=
+		127) are printed this way: \x, followed by the
+		ASCII code value in hexadecimal (upper case - 
+		always 2 characters)
+
+.IP		u
+		if the modifier is present, the function calls a
+		p_udec() function that prints an unsigned int in
+		decimal
+
+.IP		o
+		if the modifier is present, the fucntion prints an
+		unsigned int in octal using the p_oct() function
+
+.IP		x
+		if the modifer is present, the function prints a
+		uint in lowercase hex
+
+.IP		X
+		if the modifer is present, the function prints a
+		uint in uppercase hex notation
+
+.IP		p
+		if the modifier is present, the function prints a
+		memory address, as is expected of a pointer. Returns
+		the number of chars contained in this memeory address.
+
+
+
 .SH
 RETURN VALUE
 Upon successful return, this function returns the number of characters
@@ -43,7 +79,7 @@ printed out with exception of the terminating null ('\0') byte.
 .SH
 CONFORMING TO
 	_printf(): C89, C99.
-
+.SH
 EXAMPLE
 	To print out using modifiers in comparison to  the standard
 	library function printf()
@@ -63,33 +99,20 @@ EXAMPLE
 	 int len2;
 	 unsigned int ui;
 	 void *addr;
-
 	 len = _printf("Let's try to printf a simple sentence.\n");
-	 len2 = printf("Let's try to printf a simple sentence.\n");
 	 ui = (unsigned int)INT_MAX + 1024;
 	 addr = (void *)0x7ffe637541f0;
 	 _printf("Length:[%d, %i]\n", len, len);
-	 printf("Length:[%d, %i]\n", len2, len2);
 	 _printf("Negative:[%d]\n", -762534);
-	 printf("Negative:[%d]\n", -762534);
 	 _printf("Unsigned:[%u]\n", ui);
-	 printf("Unsigned:[%u]\n", ui);
 	 _printf("Unsigned octal:[%o]\n", ui);
-	 printf("Unsigned octal:[%o]\n", ui);
 	 _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-	 printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	 _printf("Character:[%c]\n", 'H');
-	 printf("Character:[%c]\n", 'H');
 	 _printf("String:[%s]\n", "I am a string !");
-	 printf("String:[%s]\n", "I am a string !");
 	 _printf("Address:[%p]\n", addr);
-	 printf("Address:[%p]\n", addr);
 	 len = _printf("Percent:[%%]\n");
-	 len2 = printf("Percent:[%%]\n");
 	 _printf("Len:[%d]\n", len);
-	 printf("Len:[%d]\n", len2);
 	 _printf("Unknown:[%r]\n");
-	 printf("Unknown:[%r]\n");
 	 return (0);
 	 }
 .SH
